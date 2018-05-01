@@ -17,12 +17,9 @@ x_n_std = np.std(x_normal)
 x_a_std = np.std(x_abnormal)
 
 #生成基于高斯分布的类概率密度曲线
-
 x = np.arange(-6,7,0.0001)
 y1 = stats.norm.pdf(x,x_n_ave,np.square(x_n_std))
-
 y2 = stats.norm.pdf(x,x_a_ave,np.square(x_a_std))
-
 
 plt.figure()
 plt.plot(x,y1)
@@ -40,8 +37,8 @@ p_2 = 0.1
 
 #损失表
 a_11 = 0
-a_12 = 6
-a_21 = 1
+a_12 = 1
+a_21 = 6
 a_22 = 0
 
 #求后验概率
@@ -70,16 +67,16 @@ plt.plot(x,R2)
 plt.title('Conditional risk curve')
 plt.xlabel('x')
 plt.ylabel('R')
-plt.text(4, 5.6,'R(normal)')
+plt.text(4, 1.2,'R(normal)')
 plt.text(4,0.3,'R(abnormal)')
 
 #求条件风险曲线的交点
 for i in range(130000):
     if(np.abs(R1[i] - R2[i])<0.0001):
-        plt.scatter(x[i],y_n[i],color='b')
+        plt.scatter(x[i],R1[i],color='b')
         print('---------------------------------------')
         print('decision boundary is : %.4f'%x[i])
-        print('当观测到的特征值x > %.4f，则细胞会被判定为abnormal，若x <= %.4f 时，细胞被判定为abnormal' %(x[i],x[i]))
+        print('当观测到的特征值x > %.4f，则细胞会被判定为abnormal，若x <= %.4f 时，细胞被判定为normal' %(x[i],x[i]))
         print('---------------------------------------')
         break
     
