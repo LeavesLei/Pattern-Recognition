@@ -18,8 +18,8 @@ x_a_std = np.std(x_abnormal)
 
 #生成基于高斯分布的类概率密度曲线
 x = np.arange(-6,7,0.0001)
-y1 = stats.norm.pdf(x,x_n_ave,np.square(x_n_std))
-y2 = stats.norm.pdf(x,x_a_ave,np.square(x_a_std))
+y1 = stats.norm.pdf(x,x_n_ave,x_n_std)
+y2 = stats.norm.pdf(x,x_a_ave,x_a_std)
 
 plt.figure()
 plt.plot(x,y1)
@@ -28,8 +28,8 @@ plt.plot(x,y2)
 plt.title('Class probability density curve')
 plt.xlabel('x')
 plt.ylabel('P(x|w)')
-plt.text(-1.8, 0.28,'P(x|normal)')
-plt.text(2.6,0.26,'P(x|abnormal)')
+plt.text(-1.4, 0.32,'P(x|normal)')
+plt.text(2.7,0.30,'P(x|abnormal)')
 
 #先验概率
 p_1 = 0.9
@@ -37,8 +37,8 @@ p_2 = 0.1
 
 #损失表
 a_11 = 0
-a_12 = 1
-a_21 = 6
+a_12 = 6
+a_21 = 1
 a_22 = 0
 
 #求后验概率
@@ -67,12 +67,12 @@ plt.plot(x,R2)
 plt.title('Conditional risk curve')
 plt.xlabel('x')
 plt.ylabel('R')
-plt.text(4, 1.2,'R(normal)')
+plt.text(4, 5.5,'R(normal)')
 plt.text(4,0.3,'R(abnormal)')
 
 #求条件风险曲线的交点
 for i in range(130000):
-    if(np.abs(R1[i] - R2[i])<0.0001):
+    if(np.abs(R1[i] - R2[i])<0.0001 ):
         plt.scatter(x[i],R1[i],color='b')
         print('---------------------------------------')
         print('decision boundary is : %.4f'%x[i])
