@@ -10,3 +10,5 @@
 # Synthetical Design of Bayesian Classifier
     Bayesian Classifier.py 一维贝叶斯分类器源码
     Multiple Bayesian Classifier.py 二维贝叶斯分类器源码
+# 运行方法
+    直接打开运行即可，以图像呈现分类结果
