@@ -6,7 +6,8 @@
 # 实验平台：
     Spyder (Python 3.5)
 # Perceptron Learning toward Linear Classification
-    Perceptron Learning toward Linear Classification.py是线性分类器源码
+    Perceptron Learning toward Linear Classification.py 线性分类器源码
 # Synthetical Design of Bayesian Classifier
-    Bayesian Classifier.py是一维贝叶斯分类器源码
-    Multiple Bayesian Classifier.py是二维贝叶斯分类器源码
+    Bayesian Classifier.py 一维贝叶斯分类器源码
+    
+    Multiple Bayesian Classifier.py 二维贝叶斯分类器源码
