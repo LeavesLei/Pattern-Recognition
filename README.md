@@ -1,4 +1,5 @@
 # Pattern-Recognition
+Motivation: **模式识别课程实验报告与源代码**
 # 每个文件夹代表一个实验
 # 每个文件夹中包含：
     1.实验源码
